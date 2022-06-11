@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">RECORD BOOK</string>
+    <string name="register_here"><u>register here</u></string>
+    <string name="e_mail">E-Mail</string>
+    <string name="login">LOGIN</string>
+    <string name="password">Password</string>
+    <string name="name">Name</string>
+    <string name="re_enter_password">Re-Enter Password</string>
+    <string name="register">REGISTER</string>
+    <string name="already_registered_login_here"><u>already registered login here</u></string>
+    <string name="already_a_member">Already a member ?</string>
+    <string name="sign_in"><b>SIGN IN</b></string>
 </resources>

@@ -6,28 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="NEW TEST "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<Button
+    android:layout_width="match_parent"
+    android:id="@+id/sign_up_home"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/already_member"
+    android:layout_marginHorizontal="60dp"
+    android:text="SIGN UP"
+    android:layout_marginBottom="100dp"
 
-    <Button
-        android:id="@+id/button"
+    android:textAlignment="center"
+
+    >
+
+</Button>
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/already_member"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sign_up_home"
+        android:layout_marginTop="30dp"
+        android:text="@string/already_a_member"
+        >
+    </TextView>
+
+    <TextView
+        android:id="@+id/sign_in_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="166dp"
-        android:layout_marginTop="106dp"
-        android:layout_marginEnd="151dp"
-        android:layout_marginBottom="201dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/already_member"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/sign_in"
+        >
+    </TextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

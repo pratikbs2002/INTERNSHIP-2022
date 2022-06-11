@@ -8,31 +8,30 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class register_activity extends AppCompatActivity {
+Button button1;
+Intent intent;
+TextView textView;
 
-    Button button1,button2;
-    TextView textView;
-    Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        button1 = findViewById(R.id.sign_up_home);
-        textView = findViewById(R.id.sign_in_home);
+        setContentView(R.layout.activity_register);
+        button1 = findViewById(R.id.register_button);
+        textView = findViewById(R.id.login);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(MainActivity.this, register_activity.class);
+                intent = new Intent(register_activity.this, login_activity.class);
                 startActivity(intent);
             }
         });
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(MainActivity.this, login_activity.class);
+                intent = new Intent(register_activity.this, login_activity.class);
                 startActivity(intent);
             }
         });
     }
-
 }
