@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">RECORD BOOK</string>
-    <string name="register_here"><u>register here</u></string>
+    <string name="register_here"><u><b>register here</b></u></string>
     <string name="e_mail">E-Mail</string>
     <string name="login">LOGIN</string>
     <string name="password">Password</string>
@@ -10,4 +10,14 @@
     <string name="already_registered_login_here"><u>already registered login here</u></string>
     <string name="already_a_member">Already a member ?</string>
     <string name="sign_in"><b>SIGN IN</b></string>
+    <string name="forgot_password"><u>Forgot Password ? </u></string>
+    <string name="register_from_here"><u><b>Register from here</b></u></string>
+    <string name="login_from_here"><u><b>Login from here</b></u></string>
+    <string name="login_home"><u><b>Login</b></u></string>
+    <string name="login_now"><b>Login Now</b></string>
+    <string name="create_account"><b>Create Account</b></string>
+    <string name="welcome_to_record_book"><b>Welcome to Record Book</b></string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="don_t_you_have_an_account">Don\'t you have an account?</string>
+    <string name="register_home">REGISTER</string>
 </resources>

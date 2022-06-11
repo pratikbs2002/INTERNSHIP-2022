@@ -13,6 +13,7 @@ public class login_activity extends AppCompatActivity {
     Button button1;
     Intent intent;
     TextView textView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
