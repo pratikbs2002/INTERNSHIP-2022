@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "524934956196",
+    "project_id": "record-book-b7f41",
+    "storage_bucket": "record-book-b7f41.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524934956196:android:d01b6bf16f2349a0841231",
+        "android_client_info": {
+          "package_name": "com.example.recordbook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524934956196-t7g9mgfslugpma3349huiishvae1jgi6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCY2ncuQaHwLc8N6J1DSN8BLvXK7JHB_Oo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524934956196-t7g9mgfslugpma3349huiishvae1jgi6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

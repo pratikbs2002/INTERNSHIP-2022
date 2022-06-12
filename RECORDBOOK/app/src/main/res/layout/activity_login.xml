@@ -58,7 +58,7 @@
         <EditText
             android:background="@drawable/button_design"
             android:padding="10dp"
-            android:id="@+id/editTextTextEmailAddress"
+            android:id="@+id/editTextTextEmailAddress_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -73,7 +73,7 @@
         <EditText
             android:background="@drawable/button_design"
             android:padding="10dp"
-            android:id="@+id/editTextTextPassword1"
+            android:id="@+id/editTextTextPassword_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -134,6 +134,19 @@
 
     </TextView>
         </LinearLayout>
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:visibility="gone"
+        android:layout_centerInParent= "true"
+        style="?android:attr/progressBarStyleLarge"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </ProgressBar>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
