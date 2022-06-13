@@ -21,7 +21,7 @@ public class login_activity extends AppCompatActivity implements View.OnClickLis
 
     Button login_button;
     Intent intent;
-    TextView register;
+    TextView register,forgot_password;
     private EditText editTextEmail,editTextPassword;
 
     private FirebaseAuth mAuth;
@@ -44,6 +44,10 @@ public class login_activity extends AppCompatActivity implements View.OnClickLis
         login_button.setOnClickListener(this);
         register = findViewById(R.id.register);
         register.setOnClickListener(this);
+
+        forgot_password = findViewById(R.id.forgot_password);
+        forgot_password.setOnClickListener(this);
+
 //        login_button.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -63,6 +67,9 @@ public class login_activity extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.login_button:
                 userLogin();
+                break;
+            case R.id.forgot_password:
+                startActivity(new Intent(login_activity.this,ResetPassword.class));
                 break;
 
         }
