@@ -1,8 +1,5 @@
 package com.example.recordbook;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -22,15 +21,13 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class ResetPassword extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText emailId;
     Button reset_button;
-    private ProgressBar progressBar;
-
     FirebaseAuth auth;
-    Button okay_btn_wrong,okay_btn_right;
-    TextView popUp_wrong,popUp_right;
-    Dialog dialog_rightSign,dialog_wrongSign;
-
+    Button okay_btn_wrong, okay_btn_right;
+    TextView popUp_wrong, popUp_right;
+    Dialog dialog_rightSign, dialog_wrongSign;
+    private EditText emailId;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,13 +60,13 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
         okay_btn_wrong.setOnClickListener(this);
         //........................................................................:::: dialog
 
-        auth= FirebaseAuth.getInstance();
+        auth = FirebaseAuth.getInstance();
         reset_button.setOnClickListener(this);
     }
+
     @Override
     public void onClick(View v) {
-        switch (v.getId())
-        {
+        switch (v.getId()) {
             case R.id.reset_button:
                 resetPassword();
         }
@@ -79,13 +76,12 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
     private void resetPassword() {
         String email = emailId.getText().toString().trim();
 
-        if (email.isEmpty()){
+        if (email.isEmpty()) {
             emailId.setError("Email is required !");
             emailId.requestFocus();
             return;
         }
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches())
-        {
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             emailId.setError("Please provide valid email");
             emailId.requestFocus();
             return;
@@ -96,8 +92,7 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
         auth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                if(task.isSuccessful())
-                {
+                if (task.isSuccessful()) {
 //                    Toast.makeText(ResetPassword.this, "Check Your Mail-Box to reset Your Password", Toast.LENGTH_SHORT).show();
 
                     dialog_rightSign.show();
@@ -120,8 +115,7 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
                         }
                     }, 4000);
 
-                }
-                else {
+                } else {
                     dialog_wrongSign.show();
                     String message = "Email-ID not Registered ! \nPlease Enter Valid Email-ID";
                     popUp_wrong.setText(message);

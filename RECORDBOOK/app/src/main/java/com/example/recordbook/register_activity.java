@@ -1,8 +1,5 @@
 package com.example.recordbook;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -26,13 +25,12 @@ public class register_activity extends AppCompatActivity implements View.OnClick
     Button register_button;
     Intent intent;
     TextView textView;
-
+    Button okay_btn_wrong, okay_btn_right;
+    TextView popUp_wrong, popUp_right;
+    Dialog dialog_rightSign, dialog_wrongSign;
     private EditText editTextName, editTextEmail, editTextPassword;
     private ProgressBar progressBar;
     private FirebaseAuth mAuth;
-    Button okay_btn_wrong,okay_btn_right;
-    TextView popUp_wrong,popUp_right;
-    Dialog dialog_rightSign,dialog_wrongSign;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

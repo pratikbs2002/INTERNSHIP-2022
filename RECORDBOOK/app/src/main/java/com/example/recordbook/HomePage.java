@@ -1,14 +1,14 @@
 package com.example.recordbook;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -36,7 +36,7 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(HomePage.this,MainActivity.class));
+                startActivity(new Intent(HomePage.this, MainActivity.class));
             }
         });
 
@@ -49,8 +49,7 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User userprofile = snapshot.getValue(User.class);
-                if (userprofile != null)
-                {
+                if (userprofile != null) {
                     String name = userprofile.name;
                     nameTextView.setText(name);
 
@@ -59,7 +58,7 @@ public class HomePage extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(HomePage.this,"something wrong",Toast.LENGTH_LONG).show();
+                Toast.makeText(HomePage.this, "something wrong", Toast.LENGTH_LONG).show();
             }
         });
     }

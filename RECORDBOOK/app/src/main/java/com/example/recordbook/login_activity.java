@@ -1,8 +1,5 @@
 package com.example.recordbook;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,27 +10,26 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class login_activity extends AppCompatActivity implements View.OnClickListener{
+public class login_activity extends AppCompatActivity implements View.OnClickListener {
 
     Button login_button;
     Intent intent;
-    TextView register,forgot_password;
-    private EditText editTextEmail,editTextPassword;
-
+    TextView register, forgot_password;
+    Button okay_btn_wrong, okay_btn_right;
+    TextView popUp_wrong, popUp_right;
+    Dialog dialog_rightSign, dialog_wrongSign;
+    private EditText editTextEmail, editTextPassword;
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
-
-    Button okay_btn_wrong,okay_btn_right;
-    TextView popUp_wrong,popUp_right;
-    Dialog dialog_rightSign,dialog_wrongSign;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,8 +77,7 @@ public class login_activity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View view) {
-        switch (view.getId())
-        {
+        switch (view.getId()) {
             case R.id.register:
                 intent = new Intent(login_activity.this, register_activity.class);
                 startActivity(intent);
@@ -91,7 +86,7 @@ public class login_activity extends AppCompatActivity implements View.OnClickLis
                 userLogin();
                 break;
             case R.id.forgot_password:
-                startActivity(new Intent(login_activity.this,ResetPassword.class));
+                startActivity(new Intent(login_activity.this, ResetPassword.class));
                 break;
 
         }
@@ -102,24 +97,24 @@ public class login_activity extends AppCompatActivity implements View.OnClickLis
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
 
-        if (email.isEmpty()){
+        if (email.isEmpty()) {
             editTextEmail.setError("Email is required !");
             editTextEmail.requestFocus();
             return;
         }
 
-        if (password.isEmpty()){
+        if (password.isEmpty()) {
             editTextPassword.setError("Password is required !");
             editTextPassword.requestFocus();
             return;
         }
         progressBar.setVisibility(View.VISIBLE);
-        mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
-                    startActivity(new Intent(login_activity.this,HomePage.class));
-                }else{
+                if (task.isSuccessful()) {
+                    startActivity(new Intent(login_activity.this, HomePage.class));
+                } else {
 
                     dialog_wrongSign.show();
                     String message = "Failed to Login check Your Credentials";
