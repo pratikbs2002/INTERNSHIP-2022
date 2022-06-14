@@ -49,7 +49,7 @@ public class register_activity extends AppCompatActivity implements View.OnClick
         //..........................................................................................
 
 
-        //dialog ::::
+        //dialog ::::..........................................................................
         dialog_rightSign = new Dialog(register_activity.this);
         dialog_rightSign.setContentView(R.layout.dialog_rightsign);
         dialog_rightSign.getWindow().setBackgroundDrawable(getDrawable(R.drawable.dialog_background));
@@ -69,9 +69,7 @@ public class register_activity extends AppCompatActivity implements View.OnClick
         popUp_wrong = dialog_wrongSign.findViewById(R.id.popUp_message_wrong);
         okay_btn_wrong = dialog_wrongSign.findViewById(R.id.btn_okay_wrong);
         okay_btn_wrong.setOnClickListener(this);
-
-
-//:::: dialog
+        //........................................................................:::: dialog
 
 
         editTextName = (EditText) findViewById(R.id.editTextTextPersonName);
@@ -164,13 +162,31 @@ public class register_activity extends AppCompatActivity implements View.OnClick
 
 
                                                 //........................
-//                                                Toast.makeText(register_activity.this, "Registration successfully",
-//                                                        Toast.LENGTH_LONG).show();
-//
-//                                                startActivity(new Intent(register_activity.this, login_activity.class));
+                                               /* Toast.makeText(register_activity.this, "Registration successfully",
+                                                        Toast.LENGTH_LONG).show();
+
+                                                startActivity(new Intent(register_activity.this, login_activity.class));*/
 
                                             } else {
-                                                Toast.makeText(register_activity.this, "Registration failed", Toast.LENGTH_LONG).show();
+//                                                Toast.makeText(register_activity.this, "Registration failed", Toast.LENGTH_LONG).show();
+                                                dialog_wrongSign.show();
+                                                String message = "Registration failed";
+                                                popUp_wrong.setText(message);
+
+                                                okay_btn_wrong.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        dialog_wrongSign.cancel();
+                                                    }
+                                                });
+
+                                                Handler handler = new Handler();
+                                                handler.postDelayed(new Runnable() {
+                                                    @Override
+                                                    public void run() {
+                                                        dialog_wrongSign.cancel();
+                                                    }
+                                                }, 5000);
                                             }
                                             progressBar.setVisibility(View.GONE);
                                         }
