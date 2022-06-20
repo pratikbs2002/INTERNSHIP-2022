@@ -17,6 +17,15 @@
         android:theme="@style/Theme.RECORDBOOK"
         tools:targetApi="31">
         <activity
+            android:name=".currentUserProfile"
+            android:exported="false" />
+        <activity
+            android:name=".AddNewTransaction_activity"
+            android:exported="false" />
+        <activity
+            android:name=".Dashboard_activity"
+            android:exported="false" />
+        <activity
             android:name=".ResetPassword"
             android:exported="false" />
         <activity

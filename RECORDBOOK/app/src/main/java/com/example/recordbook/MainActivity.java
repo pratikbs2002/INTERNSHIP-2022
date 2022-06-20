@@ -8,7 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     Intent intent;
     NetworkChangeListener networkChangeListener = new NetworkChangeListener();
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +28,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         button1 = findViewById(R.id.sign_up_home);
         textView = findViewById(R.id.sign_in_home);
+
+        mAuth = FirebaseAuth.getInstance();
+        mAuth.addAuthStateListener(new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                if (mAuth.getCurrentUser()!=null)
+                {
+                    try {
+                        startActivity(new Intent(MainActivity.this,Dashboard_activity.class));
+                        finish();
+
+                    }
+                    catch (Exception e){
+
+                    }
+                }
+            }
+        });
 
 
         button1.setOnClickListener(new View.OnClickListener() {

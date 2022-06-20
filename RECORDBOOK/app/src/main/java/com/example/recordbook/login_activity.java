@@ -38,6 +38,7 @@ public class login_activity extends AppCompatActivity implements View.OnClickLis
 
         mAuth = FirebaseAuth.getInstance();
 
+
         editTextEmail = (EditText) findViewById(R.id.editTextTextEmailAddress_login);
         editTextPassword = (EditText) findViewById(R.id.editTextTextPassword_login);
         progressBar = findViewById(R.id.progressbar);
@@ -113,7 +114,7 @@ public class login_activity extends AppCompatActivity implements View.OnClickLis
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    startActivity(new Intent(login_activity.this, HomePage.class));
+                    startActivity(new Intent(login_activity.this, Dashboard_activity.class));
                 } else {
 
                     dialog_wrongSign.show();

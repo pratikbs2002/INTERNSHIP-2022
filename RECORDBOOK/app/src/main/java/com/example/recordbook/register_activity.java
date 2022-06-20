@@ -22,6 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class register_activity extends AppCompatActivity implements View.OnClickListener {
+
     Button register_button;
     Intent intent;
     TextView textView;
@@ -88,7 +89,6 @@ public class register_activity extends AppCompatActivity implements View.OnClick
                 registerUser();
                 break;
         }
-
     }
 
     private void registerUser() {

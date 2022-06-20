@@ -10,18 +10,35 @@
         <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/drawable/button_design.xml" value="0.1965" />
         <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/drawable/button_design1.xml" value="0.1965" />
         <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/drawable/button_design3.xml" value="0.1965" />
+        <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/drawable/button_retry.xml" value="0.1965" />
+        <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/drawable/checkbox_background_green.xml" value="0.1965" />
+        <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/drawable/checkbox_background_red.xml" value="0.1965" />
+        <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/drawable/deposit_sign.xml" value="0.1965" />
         <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/drawable/dialog_background.xml" value="0.1965" />
+        <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/drawable/expense_sign.xml" value="0.1965" />
+        <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/drawable/ic_baseline_person.xml" value="0.1965" />
         <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1965" />
+        <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/drawable/ic_connection_lost.xml" value="0.1965" />
         <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/drawable/ic_email.xml" value="0.1965" />
         <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1915" />
         <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/drawable/ic_lock.xml" value="0.1215" />
-        <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/layout/activity_home_page.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/drawable/ic_profile_pic.xml" value="0.1965" />
+        <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/drawable/profile_button_background.xml" value="0.1965" />
+        <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/drawable/recycleitem_background.xml" value="0.1965" />
+        <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/drawable/selected_checkbox_background_green.xml" value="0.1965" />
+        <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/drawable/selected_checkbox_background_red.xml" value="0.1965" />
+        <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/layout/activity_add_new_transaction.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/layout/activity_current_user_profile.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/layout/activity_dashboard.xml" value="0.2" />
+        <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/layout/activity_home_page.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/layout/activity_reset_password.xml" value="0.2" />
+        <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/layout/check_internet_connection_dialog.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/layout/dialog_rightsign.xml" value="0.253125" />
         <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/layout/dialog_wrongsign.xml" value="0.253125" />
+        <entry key="..\:/Users/PRATIK/Desktop/INTERNSHIP-2022/RECORDBOOK/app/src/main/res/layout/recyclerview_items.xml" value="0.20863616930312098" />
       </map>
     </option>
   </component>
