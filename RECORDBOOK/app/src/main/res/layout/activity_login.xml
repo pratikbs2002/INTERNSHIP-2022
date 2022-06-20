@@ -14,10 +14,9 @@
         android:background="@drawable/background_edit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 
-
-    </ImageView>
 
     <ImageView
         android:layout_width="match_parent"
@@ -26,10 +25,9 @@
         android:background="@drawable/background_edit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ContentDescription" />
 
-
-    </ImageView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -51,9 +49,8 @@
             android:layout_marginBottom="30dp"
             android:text="@string/login_now"
             android:textColor="@color/background"
-            android:textSize="30sp">
+            android:textSize="30sp" />
 
-        </TextView>
 
         <EditText
             android:id="@+id/editTextTextEmailAddress_login"
@@ -67,8 +64,7 @@
             android:hint="@string/e_mail"
             android:inputType="textEmailAddress"
             android:padding="10dp"
-            tools:layout_editor_absoluteX="78dp"
-            tools:layout_editor_absoluteY="406dp" />
+            tools:ignore="Autofill" />
 
         <EditText
             android:id="@+id/editTextTextPassword_login"
@@ -80,7 +76,8 @@
             android:ems="10"
             android:hint="@string/password"
             android:inputType="textPassword"
-            android:padding="10dp" />
+            android:padding="10dp"
+            tools:ignore="Autofill" />
 
         <TextView
             android:id="@+id/forgot_password"
@@ -92,10 +89,8 @@
             android:gravity="end"
             android:text="@string/forgot_password"
             android:textColor="@color/black"
-            android:textSize="15sp">
+            android:textSize="15sp" />
 
-
-        </TextView>
 
         <Button
             android:id="@+id/login_button"
@@ -105,6 +100,8 @@
             android:background="@drawable/button_design1"
             android:text="@string/login"
             android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -118,7 +115,7 @@
             android:text="@string/don_t_you_have_an_account"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/sign_up_home"></TextView>
+            app:layout_constraintTop_toBottomOf="@id/sign_up_home" />
 
         <TextView
 
@@ -132,9 +129,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
 
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent" />
 
-        </TextView>
     </LinearLayout>
 
     <ProgressBar

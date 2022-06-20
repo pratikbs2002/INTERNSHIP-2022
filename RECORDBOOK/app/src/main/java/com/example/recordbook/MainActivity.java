@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     Button button1, button2;
     TextView textView;
     Intent intent;
-    NetworkChangeListener networkChangeListener = new NetworkChangeListener();
+    NetworkChangeListener networkChangeListener = new NetworkChangeListener();  //Network
     private FirebaseAuth mAuth;
 
     @Override
@@ -33,14 +33,12 @@ public class MainActivity extends AppCompatActivity {
         mAuth.addAuthStateListener(new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if (mAuth.getCurrentUser()!=null)
-                {
+                if (mAuth.getCurrentUser() != null) {
                     try {
-                        startActivity(new Intent(MainActivity.this,Dashboard_activity.class));
+                        startActivity(new Intent(MainActivity.this, Dashboard_activity.class));
                         finish();
 
-                    }
-                    catch (Exception e){
+                    } catch (Exception e) {
 
                     }
                 }
@@ -65,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //Network
     @Override
     protected void onStart() {
         IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);

@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/recycleitem_background"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_margin="0.5dp"
-    app:cardElevation="30dp"
-    android:layout_height="wrap_content">
+    android:background="@drawable/recycleitem_background"
+    app:cardElevation="30dp">
 
-<!--    <View-->
-<!--        android:id="@+id/priority_one"-->
-<!--        android:layout_width="20dp"-->
-<!--        android:layout_height="20dp"-->
-<!--        android:background="@drawable/deposit_sign"-->
-<!--        android:layout_margin="10dp"-->
-<!--        android:layout_gravity="end"-->
-<!--        >-->
+    <!--    <View-->
+    <!--        android:id="@+id/priority_one"-->
+    <!--        android:layout_width="20dp"-->
+    <!--        android:layout_height="20dp"-->
+    <!--        android:background="@drawable/deposit_sign"-->
+    <!--        android:layout_margin="10dp"-->
+    <!--        android:layout_gravity="end"-->
+    <!--        >-->
 
-<!--    </View>-->
+    <!--    </View>-->
     <RelativeLayout
-        android:padding="10dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
         <TextView
-            android:layout_toStartOf="@id/amount_sign"
-            android:layout_alignParentStart="true"
             android:id="@+id/note_one"
-            android:text="Your Note Here"
-            android:maxLines="1"
-            android:ellipsize="end"
-            android:maxLength="38"
-            android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@id/amount_sign"
+            android:ellipsize="end"
+            android:maxLength="38"
+            android:maxLines="1"
+            android:text="Your Note Here"
+            android:textSize="20sp"
 
-            >
+            />
 
-        </TextView>
 
         <TextView
             android:id="@+id/amount_one"
@@ -45,23 +45,20 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="10dp"
             android:text="200"
-            android:textStyle="bold"
-            android:textSize="20sp">
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-        </TextView>
         <TextView
-            android:textStyle="bold"
-            android:layout_marginEnd="10dp"
-            android:layout_toStartOf="@id/amount_one"
             android:id="@+id/amount_sign"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/note_one"
             android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toStartOf="@id/amount_one"
             android:text="@string/money"
-            android:textSize="20sp">
-
-        </TextView>
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/date_one"
@@ -71,9 +68,7 @@
             android:layout_alignParentStart="true"
             android:layout_marginTop="10dp"
             android:text="17 06 2021"
-            android:textSize="15sp">
-
-        </TextView>
+            android:textSize="15sp" />
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

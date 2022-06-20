@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.View;
 
@@ -22,6 +24,8 @@ import java.util.Collection;
 import java.util.Collections;
 
 public class Dashboard_activity extends AppCompatActivity {
+    NetworkChangeListener networkChangeListener = new NetworkChangeListener();  //Network
+
     ActivityDashboardBinding binding;
     FirebaseFirestore firebaseFirestore;
     FirebaseAuth firebaseAuth;
@@ -50,12 +54,12 @@ public class Dashboard_activity extends AppCompatActivity {
                 startActivity(new Intent(Dashboard_activity.this, AddNewTransaction_activity.class));
             }
         });
-binding.profileBtnDashboard.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        startActivity(new Intent(Dashboard_activity.this,currentUserProfile.class));
-    }
-});
+        binding.profileBtnDashboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Dashboard_activity.this, currentUserProfile.class));
+            }
+        });
         loaddata();
         binding.progressbar.setVisibility(View.VISIBLE);
     }
@@ -98,5 +102,21 @@ binding.profileBtnDashboard.setOnClickListener(new View.OnClickListener() {
 
                     }
                 });
+    }
+
+    //Network
+    @Override
+    protected void onStart() {
+        IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+        registerReceiver(
+                networkChangeListener, filter
+        );
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        unregisterReceiver(networkChangeListener);
+        super.onStop();
     }
 }

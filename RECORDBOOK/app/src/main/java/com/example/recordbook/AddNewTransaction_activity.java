@@ -5,7 +5,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -30,6 +32,7 @@ public class AddNewTransaction_activity extends AppCompatActivity {
     FirebaseFirestore fStore;
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
+    NetworkChangeListener networkChangeListener = new NetworkChangeListener();  //Network
 
 
     @Override
@@ -97,20 +100,20 @@ public class AddNewTransaction_activity extends AppCompatActivity {
 
                 String id = UUID.randomUUID().toString();
 
-                Map<String,Object> transaction = new HashMap<>();
+                Map<String, Object> transaction = new HashMap<>();
 
-                transaction.put("id",id);
-                transaction.put("amount",amount);
-                transaction.put("note",note);
-                transaction.put("type",type);
-                transaction.put("date",currentDate);
+                transaction.put("id", id);
+                transaction.put("amount", amount);
+                transaction.put("note", note);
+                transaction.put("type", type);
+                transaction.put("date", currentDate);
                 fStore.collection("Expenses").document(firebaseAuth.getCurrentUser().getEmail()).collection("Transaction").document(id)
                         .set(transaction)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
                                 Toast.makeText(AddNewTransaction_activity.this, "added", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(AddNewTransaction_activity.this,Dashboard_activity.class));
+                                startActivity(new Intent(AddNewTransaction_activity.this, Dashboard_activity.class));
                                 binding.noteNewTransaction.setText("");
                                 binding.amountNewTransaction.setText("");
                                 binding.progressbar.setVisibility(View.GONE);
@@ -127,5 +130,21 @@ public class AddNewTransaction_activity extends AppCompatActivity {
             }
         });
 
+    }
+
+    //Network
+    @Override
+    protected void onStart() {
+        IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+        registerReceiver(
+                networkChangeListener, filter
+        );
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        unregisterReceiver(networkChangeListener);
+        super.onStop();
     }
 }

@@ -1,6 +1,8 @@
 package com.example.recordbook;
 
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,10 +22,10 @@ import com.google.firebase.database.ValueEventListener;
 
 public class HomePage extends AppCompatActivity {
 
+    NetworkChangeListener networkChangeListener = new NetworkChangeListener();  //Network
     private FirebaseUser user;
     private DatabaseReference reference;
     private String userId;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,5 +63,21 @@ public class HomePage extends AppCompatActivity {
                 Toast.makeText(HomePage.this, "something wrong", Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    //Network
+    @Override
+    protected void onStart() {
+        IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+        registerReceiver(
+                networkChangeListener, filter
+        );
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        unregisterReceiver(networkChangeListener);
+        super.onStop();
     }
 }

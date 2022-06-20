@@ -2,6 +2,8 @@ package com.example.recordbook;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -27,6 +29,8 @@ public class login_activity extends AppCompatActivity implements View.OnClickLis
     Button okay_btn_wrong, okay_btn_right;
     TextView popUp_wrong, popUp_right;
     Dialog dialog_rightSign, dialog_wrongSign;
+    NetworkChangeListener networkChangeListener = new NetworkChangeListener();  //Network
+
     private EditText editTextEmail, editTextPassword;
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
@@ -142,5 +146,21 @@ public class login_activity extends AppCompatActivity implements View.OnClickLis
 
             }
         });
+    }
+
+    //Network
+    @Override
+    protected void onStart() {
+        IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+        registerReceiver(
+                networkChangeListener, filter
+        );
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        unregisterReceiver(networkChangeListener);
+        super.onStop();
     }
 }

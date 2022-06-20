@@ -2,6 +2,8 @@ package com.example.recordbook;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Patterns;
@@ -26,6 +28,8 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
     Button okay_btn_wrong, okay_btn_right;
     TextView popUp_wrong, popUp_right;
     Dialog dialog_rightSign, dialog_wrongSign;
+    NetworkChangeListener networkChangeListener = new NetworkChangeListener();  //Network
+
     private EditText emailId;
     private ProgressBar progressBar;
 
@@ -141,5 +145,20 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
         });
     }
 
+    //Network
+    @Override
+    protected void onStart() {
+        IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+        registerReceiver(
+                networkChangeListener, filter
+        );
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        unregisterReceiver(networkChangeListener);
+        super.onStop();
+    }
 
 }

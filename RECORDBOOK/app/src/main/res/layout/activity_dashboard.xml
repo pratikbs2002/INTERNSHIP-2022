@@ -17,12 +17,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:text="DASH BOARD"
+            android:text="DASHBOARD"
             android:textAlignment="center"
+            android:textColor="@color/white"
             android:textSize="20sp"
-            android:textStyle="bold">
-
-        </TextView>
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/profileBtn_dashboard"
@@ -31,19 +30,19 @@
             android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
             android:layout_marginEnd="8dp"
-
             android:background="@drawable/profile_button_background"
-            android:padding="3dp"
-            android:src="@drawable/ic_baseline_person_24">
 
-        </ImageView>
+            android:padding="3dp"
+            android:src="@drawable/ic_baseline_person_24"
+            tools:ignore="ContentDescription" />
     </RelativeLayout>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar_dashboard"
-        >
+        android:layout_below="@id/toolbar_dashboard">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -81,21 +80,22 @@
                         tools:ignore="UseCompoundDrawables">
 
                         <TextView
-                            android:gravity="center"
-                            android:layout_gravity="center"
                             android:id="@+id/income_dashboard"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
                             android:text="000"
                             android:textColor="#5FF103"
                             android:textSize="18sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
+
                         <TextView
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:layout_marginTop="10dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
                             android:text="TOTAL INCOME"
                             android:textAlignment="center"
                             android:textColor="@color/black"
@@ -124,21 +124,20 @@
                         android:gravity="center"
                         android:orientation="vertical"
                         tools:ignore="UseCompoundDrawables">
+
                         <TextView
                             android:id="@+id/expense_dashboard"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
                             android:text="000"
                             android:textColor="#FF0000"
                             android:textSize="18sp"
-                            android:textStyle="bold">
+                            android:textStyle="bold" />
 
-                        </TextView>
                         <TextView
-                            android:layout_marginTop="10dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
                             android:text="TOTAL EXPENSE"
                             android:textAlignment="center"
                             android:textColor="@color/black"
@@ -150,6 +149,7 @@
 
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -175,20 +175,19 @@
                         android:gravity="center"
                         android:orientation="vertical"
                         tools:ignore="UseCompoundDrawables">
+
                         <TextView
                             android:id="@+id/balance_dashboard"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
                             android:text="000"
                             android:textSize="18sp"
-                            android:textStyle="bold">
+                            android:textStyle="bold" />
 
-                        </TextView>
                         <TextView
-                            android:layout_marginTop="10dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
                             android:text="FINAL BALANCE"
                             android:textAlignment="center"
                             android:textColor="@color/black"
@@ -203,6 +202,7 @@
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollview_dashboard"
         android:layout_width="match_parent"
@@ -211,8 +211,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20sp"
 
-android:fillViewport="true"
-        android:layout_marginRight="10dp">
+        android:layout_marginRight="10dp"
+        android:fillViewport="true">
 
         <androidx.recyclerview.widget.RecyclerView
 
@@ -228,40 +228,40 @@ android:fillViewport="true"
         android:id="@+id/addNew_transaction_button"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_margin="20sp"
         android:backgroundTint="#009688"
-        app:cardCornerRadius="30dp"
-        >
+        app:cardCornerRadius="30dp">
 
         <RelativeLayout
-            android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:background="@color/background"
             android:padding="20sp">
 
             <ImageView
-                android:layout_centerVertical="true"
                 android:id="@+id/add_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_person">
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_baseline_person"
+                app:tint="@color/white"
+                tools:ignore="ContentDescription" />
 
-            </ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/add_img"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/add_img"
                 android:padding="1dp"
                 android:text="ADD TRANSACTION"
                 android:textColor="@color/white"
-                android:textStyle="bold">
+                android:textStyle="bold" />
 
-            </TextView>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
