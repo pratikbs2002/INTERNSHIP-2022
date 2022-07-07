@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".update_transaction">
+<androidx.core.widget.NestedScrollView
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:paddingBottom="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/toolbar_UpdateTransaction"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/background">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="UPDATE TRANSACTION"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold">
+
+            </TextView>
+            <ImageView
+                android:id="@+id/BackButton_updateTransaction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/ic_baseline_arrow_back_ios_new_24"
+                android:padding="3dp"
+                tools:ignore="ContentDescription" />
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/amount_UpdateTransaction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/button_design"
+            android:hint="AMOUNT"
+            android:inputType="number"
+            android:padding="15dp"
+            tools:ignore="Autofill">
+
+        </EditText>
+
+        <EditText
+
+            android:id="@+id/note_UpdateTransaction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/button_design"
+            android:gravity="start"
+            android:hint="NOTE"
+            android:inputType="textMultiLine"
+            android:padding="15dp"
+            android:scrollbars="horizontal"
+            android:textAlignment="textStart"
+            tools:ignore="Autofill" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/expense_UpdateTransaction"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/checkbox_background_red"
+                android:buttonTint="@color/black"
+                android:gravity="center"
+                android:text="EXPENSE"
+                android:textColor="@color/black"
+                android:textStyle="bold">
+
+            </CheckBox>
+
+            <CheckBox
+                android:id="@+id/income_UpdateTransaction"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/checkbox_background_green"
+                android:buttonTint="@color/black"
+                android:gravity="center"
+                android:text="INCOME"
+                android:textColor="@color/black"
+                android:textStyle="bold">
+
+            </CheckBox>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/Update_transaction_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40sp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/button_design1"
+            android:text="Update"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold">
+
+        </Button>
+
+        <Button
+            android:id="@+id/Delete_transaction_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40sp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/button_design1"
+            android:text="Delete"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold">
+
+
+
+        </Button>
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressbar_update_transaction"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ProgressBar>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
