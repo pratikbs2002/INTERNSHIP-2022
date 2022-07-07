@@ -53,7 +53,8 @@
             app:hintEnabled="false">
 
         <EditText
-            android:maxLength="20"
+
+            android:maxLength="8"
             android:id="@+id/amount_newTransaction"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
