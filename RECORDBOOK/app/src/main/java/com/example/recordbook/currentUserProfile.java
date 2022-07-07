@@ -142,4 +142,10 @@ public class currentUserProfile extends AppCompatActivity {
     }
     // ........................ : Network
 
+    public void onBackPressed(){
+        startActivity(new Intent(currentUserProfile.this,Dashboard_activity.class));
+        finish();
+        return;
+    }
+
 }

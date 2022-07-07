@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import android.content.ClipData;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
@@ -23,9 +22,6 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
 import java.util.Locale;
 
 
@@ -39,7 +35,7 @@ public class Dashboard_activity extends AppCompatActivity {
     TransactionAdapter transactionAdapter;
     SearchView searchView;
 
-    int sumExpense = 0, sumIncome = 0;
+    long sumExpense = 0, sumIncome = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,8 +81,23 @@ public class Dashboard_activity extends AppCompatActivity {
 
             }
         });
+        binding.btnOfTotalIncomeDashboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Dashboard_activity.this, total_income.class));
+                finish();
+            }
+        });
+        binding.btnOfTotalExpenseDashboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Dashboard_activity.this, total_expense.class));
+                finish();
+            }
+        });
         loaddata();
         binding.progressbar.setVisibility(View.VISIBLE);
+
 
     }
 
@@ -128,7 +139,7 @@ public class Dashboard_activity extends AppCompatActivity {
                                     ds.getString("amount"),
                                     ds.getString("type"),
                                     ds.getString("date"));
-                            int amount = Integer.parseInt(ds.getString("amount"));
+                            long amount = Integer.parseInt(ds.getString("amount"));
                             if (ds.getString("type").equals("Expense")) {
                                 sumExpense = sumExpense + amount;
                             } else {
@@ -163,4 +174,5 @@ public class Dashboard_activity extends AppCompatActivity {
         unregisterReceiver(networkChangeListener);
         super.onStop();
     }
+
 }

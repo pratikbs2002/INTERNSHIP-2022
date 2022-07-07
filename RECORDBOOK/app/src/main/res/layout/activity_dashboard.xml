@@ -8,7 +8,6 @@
     tools:context=".Dashboard_activity">
 
 
-
     <RelativeLayout
         android:id="@+id/toolbar_dashboard"
         android:layout_width="match_parent"
@@ -40,13 +39,13 @@
     </RelativeLayout>
 
     <androidx.cardview.widget.CardView
-        app:cardElevation="-40dp"
-        android:background="@color/background"
-        app:cardBackgroundColor="@color/background"
         android:id="@+id/cardView_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar_dashboard">
+        android:layout_below="@id/toolbar_dashboard"
+        android:background="@color/background"
+        app:cardBackgroundColor="@color/background"
+        app:cardElevation="-40dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -66,6 +65,7 @@
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_of_totalIncome_dashboard"
                     android:layout_width="0dp"
                     android:layout_height="80dp"
                     android:layout_margin="5dp"
@@ -113,6 +113,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_of_totalExpense_dashboard"
                     android:layout_width="0dp"
                     android:layout_height="80dp"
                     android:layout_margin="5dp"
@@ -210,9 +211,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/cardView_label"
+        android:layout_marginTop="3dp"
         android:background="@drawable/button_design"
-
-app:iconifiedByDefault="false"
+        app:iconifiedByDefault="false"
         app:queryHint="search here">
 
     </androidx.appcompat.widget.SearchView>

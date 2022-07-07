@@ -23,4 +23,6 @@
     <string name="money">₹</string>
     <string name="edit_profile">Edit Profile</string>
     <string name="reset_password">Reset Password</string>
+    <string name="total_expense">TOTAL EXPENSE</string>
+    <string name="total_income">TOTAL INCOME</string>
 </resources>
