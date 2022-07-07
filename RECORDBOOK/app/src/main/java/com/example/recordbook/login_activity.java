@@ -114,38 +114,39 @@ public class login_activity extends AppCompatActivity implements View.OnClickLis
             return;
         }
         progressBar.setVisibility(View.VISIBLE);
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    startActivity(new Intent(login_activity.this, Dashboard_activity.class));
-                } else {
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            startActivity(new Intent(login_activity.this, Dashboard_activity.class));
+                        } else {
 
-                    dialog_wrongSign.show();
-                    String message = "Failed to Login check Your Credentials";
-                    popUp_wrong.setText(message);
+                            dialog_wrongSign.show();
+                            String message = "Failed to Login check Your Credentials";
+                            popUp_wrong.setText(message);
 
-                    okay_btn_wrong.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            dialog_wrongSign.cancel();
-                        }
-                    });
+                            okay_btn_wrong.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    dialog_wrongSign.cancel();
+                                }
+                            });
 
-                    Handler handler = new Handler();
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            dialog_wrongSign.cancel();
-                        }
-                    }, 5000);
+                            Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    dialog_wrongSign.cancel();
+                                }
+                            }, 5000);
 
 //                    Toast.makeText(login_activity.this,"Failed to Login check Your Credentials",Toast.LENGTH_LONG).show();
-                }
-                progressBar.setVisibility(View.GONE);
+                        }
+                        progressBar.setVisibility(View.GONE);
 
-            }
-        });
+                    }
+                });
     }
 
     //Network

@@ -1,126 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".currentUserProfile">
 
-    <ImageView
-        android:id="@+id/ivBack1"
+    <RelativeLayout
+
+        android:id="@+id/toolbar_myprofile"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="-50dp"
-        android:src="@drawable/background_edit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription" />
+        android:layout_height="?attr/actionBarSize">
 
-    <ImageView
-        android:id="@+id/ivPFP"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/ic_profile_pic"
-        app:layout_constraintEnd_toEndOf="@id/ivBack1"
-        app:layout_constraintStart_toStartOf="@id/ivBack1"
-        app:layout_constraintTop_toBottomOf="@id/ivBack1"
-        tools:ignore="ContentDescription" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="My Profile"
+            android:textAlignment="center"
+            android:textColor="@color/background"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tvName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/name"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivPFP" />
+        <ImageView
+            android:id="@+id/BackButton_MyProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/ic_baseline_arrow_back_ios_new_24"
+            android:padding="3dp"
+            tools:ignore="ContentDescription" />
 
-    <TextView
-        android:id="@+id/etName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvName"
-        app:layout_constraintStart_toEndOf="@+id/tvName"
-        app:layout_constraintTop_toTopOf="@+id/tvName"
-        tools:text="User Name" />
+    </RelativeLayout>
 
-    <TextView
-        android:id="@+id/tvEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/e_mail"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/tvName"
-        app:layout_constraintTop_toBottomOf="@+id/tvName" />
-
-    <TextView
-        android:id="@+id/etEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvEmail"
-        app:layout_constraintStart_toStartOf="@+id/etName"
-        app:layout_constraintTop_toTopOf="@+id/tvEmail"
-        tools:text="User Email address" />
-
-    <TextView
-        android:id="@+id/tvEditProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="@string/edit_profile"
-        android:textColor="@color/background"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
-
-    <TextView
-        android:id="@+id/tvResetPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/reset_password"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvEditProfile"
-        app:layout_constraintStart_toStartOf="@+id/tvEditProfile"
-        app:layout_constraintTop_toBottomOf="@+id/tvEditProfile" />
-
-    <Button
-        android:id="@+id/LogOut_currentuser"
+    <LinearLayout
+        android:id="@+id/FirstPart_MyProfile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="48dp"
-        android:layout_marginTop="25dp"
-        android:background="@drawable/button_design1"
-        android:text="LOGOUT"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/tvResetPassword"
-        app:layout_constraintStart_toStartOf="@+id/tvResetPassword"
-        app:layout_constraintTop_toBottomOf="@+id/tvResetPassword" />
+        android:layout_below="@id/toolbar_myprofile"
+        android:layout_marginTop="30dp">
 
-    <ImageView
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ProfileImage_MyProfile"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="50dp"
+                android:background="@drawable/userprofile_imagebackground"
+                android:padding="15dp"
+                android:src="@drawable/ic_baseline_person_24">
+
+            </ImageView>
+
+            <LinearLayout
+                android:id="@+id/DataLine_MyProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="30dp"
+                android:layout_toEndOf="@id/ProfileImage_MyProfile"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Username_MyProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="User Name "
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/EmailAddress_MyProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="recordbook@gmail.com">
+
+                </TextView>
+            </LinearLayout>
+
+<!--            <ImageView-->
+<!--                android:id="@+id/EditButton_MyProfile"-->
+<!--                android:layout_width="35dp"-->
+<!--                android:layout_height="35dp"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_marginStart="9dp"-->
+<!--                android:layout_marginEnd="30dp"-->
+<!--                android:layout_marginBottom="30dp"-->
+<!--                android:padding="5dp"-->
+<!--                android:src="@drawable/ic_baseline_edit_24">-->
+
+<!--            </ImageView>-->
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/SecondPart_MyProfile"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginBottom="-50dp"
-        android:src="@drawable/background_edit"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="?attr/actionBarSize"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="50dp"
+
+            >
+
+            <TextView
+
+                android:id="@+id/ResetPassword_MyProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="Reset Password"
+                android:textAlignment="center"
+                android:textColor="@color/background"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/LogOut_MyProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ResetPassword_MyProfile"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="20sp"
+                android:text="Log Out"
+                android:textAlignment="center"
+                android:textColor="#FF5722"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressbar_myProfile"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="ContentDescription" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ProgressBar>
+
+
+</RelativeLayout>

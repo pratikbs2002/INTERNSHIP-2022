@@ -152,15 +152,15 @@ public class register_activity extends AppCompatActivity implements View.OnClick
                                                         startActivity(intent);
                                                     }
                                                 });
-                                                Handler handler = new Handler();
-                                                handler.postDelayed(new Runnable() {
-                                                    @Override
-                                                    public void run() {
+//                                                Handler handler = new Handler();
+//                                                handler.postDelayed(new Runnable() {
+//                                                    @Override
+//                                                    public void run() {
                                                         dialog_rightSign.cancel();
-                                                        startActivity(new Intent(register_activity.this, login_activity.class));
-
-                                                    }
-                                                }, 8000);
+//                                                        startActivity(new Intent(register_activity.this, login_activity.class));
+//
+//                                                    }
+//                                                }, 8000);
 
 
                                                 //........................

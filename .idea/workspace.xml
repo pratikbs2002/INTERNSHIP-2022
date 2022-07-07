@@ -9,7 +9,33 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc677804-85f2-487c-b840-7d0ac03d0ff8" name="Changes" comment="" />
+    <list default="true" id="bc677804-85f2-487c-b840-7d0ac03d0ff8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/RECORDBOOK/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RECORDBOOK/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RECORDBOOK/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RECORDBOOK/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RECORDBOOK/app/src/main/java/com/example/recordbook/AddNewTransaction_activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/RECORDBOOK/app/src/main/java/com/example/recordbook/AddNewTransaction_activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RECORDBOOK/app/src/main/java/com/example/recordbook/Dashboard_activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/RECORDBOOK/app/src/main/java/com/example/recordbook/Dashboard_activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RECORDBOOK/app/src/main/java/com/example/recordbook/TransactionAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/RECORDBOOK/app/src/main/java/com/example/recordbook/TransactionAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RECORDBOOK/app/src/main/java/com/example/recordbook/currentUserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/RECORDBOOK/app/src/main/java/com/example/recordbook/currentUserProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RECORDBOOK/app/src/main/java/com/example/recordbook/login_activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/RECORDBOOK/app/src/main/java/com/example/recordbook/login_activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RECORDBOOK/app/src/main/res/layout/activity_current_user_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RECORDBOOK/app/src/main/res/layout/activity_current_user_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RECORDBOOK/app/src/main/res/layout/activity_dashboard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RECORDBOOK/app/src/main/res/layout/activity_dashboard.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RECORDBOOK/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RECORDBOOK/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RECORDBOOK/app/src/main/res/layout/recyclerview_items.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RECORDBOOK/app/src/main/res/layout/recyclerview_items.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RECORDBOOK/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RECORDBOOK/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RECORDBOOK/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RECORDBOOK/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RECORDBOOK/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RECORDBOOK/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RECORDBOOK/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RECORDBOOK/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RECORDBOOK/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RECORDBOOK/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RECORDBOOK/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RECORDBOOK/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RECORDBOOK/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RECORDBOOK/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RECORDBOOK/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RECORDBOOK/app/src/main/res/values/themes.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

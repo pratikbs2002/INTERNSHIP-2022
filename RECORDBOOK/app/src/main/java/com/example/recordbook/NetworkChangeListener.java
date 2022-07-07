@@ -7,8 +7,10 @@ import android.content.Intent;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.core.content.ContextCompat;
 
 public class NetworkChangeListener extends BroadcastReceiver {
     @Override
@@ -22,11 +24,14 @@ public class NetworkChangeListener extends BroadcastReceiver {
 
             //show dialog
             AlertDialog dialog = builder.create();
+
             dialog.show();
             dialog.setCancelable(false);
 
             dialog.getWindow().setGravity(Gravity.CENTER);
 
+     //       ContextCompat.getDrawable(this, R.drawable.your_drawable);
+//            dialog.getWindow().setBackgroundDrawable(ContextCompat.getDrawable(R.drawable.dialog_background,null));
             btnRetry.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

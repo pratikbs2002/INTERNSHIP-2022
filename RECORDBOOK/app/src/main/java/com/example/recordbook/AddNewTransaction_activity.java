@@ -10,6 +10,8 @@ import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.recordbook.databinding.ActivityAddNewTransactionBinding;
@@ -40,6 +42,16 @@ public class AddNewTransaction_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityAddNewTransactionBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        ImageView Back_button = (ImageView) findViewById(R.id.BackButton_newTransaction);
+
+        Back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AddNewTransaction_activity.this, Dashboard_activity.class));
+                finish();
+            }
+        });
 
 
         fStore = FirebaseFirestore.getInstance();
@@ -107,16 +119,18 @@ public class AddNewTransaction_activity extends AppCompatActivity {
                 transaction.put("note", note);
                 transaction.put("type", type);
                 transaction.put("date", currentDate);
-                fStore.collection("Expenses").document(firebaseAuth.getCurrentUser().getEmail()).collection("Transaction").document(id)
+                fStore.collection("Expenses").document(firebaseAuth.getCurrentUser().getUid()).collection("Transaction").document(id)
                         .set(transaction)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
-                                Toast.makeText(AddNewTransaction_activity.this, "added", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(AddNewTransaction_activity.this, "Transaction added Successfully !", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(AddNewTransaction_activity.this, Dashboard_activity.class));
                                 binding.noteNewTransaction.setText("");
                                 binding.amountNewTransaction.setText("");
                                 binding.progressbar.setVisibility(View.GONE);
+                                onBackPressed();
+
 
                             }
                         })
@@ -129,6 +143,7 @@ public class AddNewTransaction_activity extends AppCompatActivity {
                         });
             }
         });
+
 
     }
 
@@ -146,5 +161,10 @@ public class AddNewTransaction_activity extends AppCompatActivity {
     protected void onStop() {
         unregisterReceiver(networkChangeListener);
         super.onStop();
+    }
+    public void onBackPressed(){
+        startActivity(new Intent(AddNewTransaction_activity.this,Dashboard_activity.class));
+        finish();
+        return;
     }
 }

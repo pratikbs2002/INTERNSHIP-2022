@@ -20,7 +20,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class HomePage extends AppCompatActivity {
+public class HomePage extends AppCompatActivity  {
 
     NetworkChangeListener networkChangeListener = new NetworkChangeListener();  //Network
     private FirebaseUser user;
@@ -32,15 +32,6 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
-
-        Button logOut = (Button) findViewById(R.id.LogOut);
-        logOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(HomePage.this, MainActivity.class));
-            }
-        });
 
 
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -63,21 +54,5 @@ public class HomePage extends AppCompatActivity {
                 Toast.makeText(HomePage.this, "something wrong", Toast.LENGTH_LONG).show();
             }
         });
-    }
-
-    //Network
-    @Override
-    protected void onStart() {
-        IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
-        registerReceiver(
-                networkChangeListener, filter
-        );
-        super.onStart();
-    }
-
-    @Override
-    protected void onStop() {
-        unregisterReceiver(networkChangeListener);
-        super.onStop();
     }
 }

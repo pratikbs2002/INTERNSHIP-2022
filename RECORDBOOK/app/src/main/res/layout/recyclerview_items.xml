@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="0.5dp"
     android:background="@drawable/recycleitem_background"
-    app:cardElevation="30dp">
+    app:cardElevation="10dp">
 
     <!--    <View-->
     <!--        android:id="@+id/priority_one"-->
@@ -43,7 +43,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/note_one"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="10dp"
             android:text="200"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -53,7 +52,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/note_one"
-            android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_toStartOf="@id/amount_one"
             android:text="@string/money"
@@ -66,7 +64,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/amount_one"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="10dp"
             android:text="17 06 2021"
             android:textSize="15sp" />
 

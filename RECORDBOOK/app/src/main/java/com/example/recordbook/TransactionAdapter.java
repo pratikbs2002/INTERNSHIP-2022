@@ -1,7 +1,9 @@
 package com.example.recordbook;
 
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.firebase.database.collection.LLRBNode;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.MyViewHolder> {
     Context context;
@@ -26,6 +29,13 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
         this.context = context;
         this.transactionModelArrayList = transactionModelArrayList;
     }
+
+    //searchbar...................................................
+    public void setfilterlist(ArrayList<TransactionModel> filterlist ){
+        this.transactionModelArrayList = filterlist;
+        notifyDataSetChanged();
+    }
+    //...................................................searchbar
 
     @NonNull
     @Override
@@ -49,6 +59,19 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
         holder.amount.setText(model.getAmount());
         holder.date.setText(model.getDate());
         holder.note.setText(model.getNote());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,update_transaction.class);
+                intent.putExtra("id",transactionModelArrayList.get(position).getId());
+                intent.putExtra("amount",transactionModelArrayList.get(position).getAmount());
+                intent.putExtra("note",transactionModelArrayList.get(position).getNote());
+                intent.putExtra("type",transactionModelArrayList.get(position).getType());
+                context.startActivity(intent);
+                ((Activity)context).finish();
+            }
+        });
 
     }
 

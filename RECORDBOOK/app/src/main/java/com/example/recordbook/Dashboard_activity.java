@@ -2,13 +2,16 @@ package com.example.recordbook;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.recordbook.databinding.ActivityDashboardBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,6 +25,9 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
+import java.util.Locale;
+
 
 public class Dashboard_activity extends AppCompatActivity {
     NetworkChangeListener networkChangeListener = new NetworkChangeListener();  //Network
@@ -31,6 +37,7 @@ public class Dashboard_activity extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     ArrayList<TransactionModel> transactionModelArrayList;
     TransactionAdapter transactionAdapter;
+    SearchView searchView;
 
     int sumExpense = 0, sumIncome = 0;
 
@@ -40,7 +47,21 @@ public class Dashboard_activity extends AppCompatActivity {
         binding = ActivityDashboardBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        searchView = findViewById(R.id.search_bar);
+        searchView.clearFocus();
 
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filterList(newText);
+                return true;
+            }
+        });
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -52,18 +73,41 @@ public class Dashboard_activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Dashboard_activity.this, AddNewTransaction_activity.class));
+                finish();
             }
         });
         binding.profileBtnDashboard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 startActivity(new Intent(Dashboard_activity.this, currentUserProfile.class));
+                finish();
+
             }
         });
         loaddata();
         binding.progressbar.setVisibility(View.VISIBLE);
+
     }
-//
+
+
+    // SearchBar Method ....................................
+    private void filterList(String newText) {
+        ArrayList<TransactionModel> filterlist = new ArrayList<>();
+        for (TransactionModel item : transactionModelArrayList) {
+            if (item.getNote().toLowerCase(Locale.ROOT).contains(newText.toLowerCase(Locale.ROOT))) {
+                filterlist.add(item);
+            }
+        }
+        if (filterlist.isEmpty()) {
+            Toast.makeText(this, "No data found", Toast.LENGTH_SHORT).show();
+        } else {
+            transactionAdapter.setfilterlist(filterlist);
+        }
+    }
+    // ......................................... SearchBar Method
+
+
 //    @Override
 //    protected void onStart() {
 //        super.onStart();
@@ -71,7 +115,7 @@ public class Dashboard_activity extends AppCompatActivity {
 //    }
 
     private void loaddata() {
-        firebaseFirestore.collection("Expenses").document(firebaseAuth.getCurrentUser().getEmail()).collection("Transaction").orderBy("date", Query.Direction.DESCENDING)
+        firebaseFirestore.collection("Expenses").document(firebaseAuth.getUid()).collection("Transaction").orderBy("date", Query.Direction.DESCENDING)
                 .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
