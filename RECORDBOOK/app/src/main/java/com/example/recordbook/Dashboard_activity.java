@@ -5,10 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.animation.TypeEvaluator;
+import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.Toast;
 
@@ -149,7 +153,24 @@ public class Dashboard_activity extends AppCompatActivity {
                         }
                         binding.incomeDashboard.setText(getString(R.string.money) + " " + String.valueOf(sumIncome));
                         binding.expenseDashboard.setText(getString(R.string.money) + " " + String.valueOf(sumExpense));
-                        binding.balanceDashboard.setText(getString(R.string.money) + " " + String.valueOf(sumIncome - sumExpense));
+//                        binding.balanceDashboard.setText(getString(R.string.money) + " " + String.valueOf(sumIncome - sumExpense));
+
+
+//
+//                        long f = long.valueOf(sumIncome - sumExpense);
+                        ValueAnimator animator = new ValueAnimator();
+                        animator.setIntValues(0, (int) ((int) sumIncome-sumExpense));
+                        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                            public void onAnimationUpdate(ValueAnimator animation) {
+//                                view.setText(String.valueOf(animation.getAnimatedValue()));
+                                binding.balanceDashboard.setText(String.valueOf(animation.getAnimatedValue()));
+                            }
+                        });
+                        animator.setDuration(500); // here you set the duration of the anim
+                        animator.start();
+
+
+//................................................................
 
                         transactionAdapter = new TransactionAdapter(Dashboard_activity.this, transactionModelArrayList);
                         binding.historyCycle.setAdapter(transactionAdapter);
